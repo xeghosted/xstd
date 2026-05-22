@@ -17,6 +17,8 @@ All headers are inline, allocation-light, and validated on real hardware (devkit
 | `call`       | ✅ Stable   | `invoke<R>(addr)` ... `invoke<R, P1..P10>(addr, args...)` — typed calls into absolute addresses |
 | `kernel`     | ✅ Stable   | `module_handle("xam.xex")`, `resolve(module, ordinal)` — XAM / xboxkrnl / xbdm export lookup by ordinal |
 | `file`       | ✅ Stable   | RAII `file` (open/read/write/seek/tell/size/flush), modes (read_existing, write_truncate, write_append, read_write, create_new), `read_all` / `write_all` helpers |
+| `format`     | ✅ Stable   | Safe printf-style formatting — `print(buf, size, fmt, ...)`, `tmp(...)`, `buffer<N>` stack-allocated wrapper with `.print`/`.append`/`.c_str` |
+| `log`        | ✅ Stable   | Leveled logger (`trace/debug/info/warn/error`) with timestamps, prints to UART via printf and optional file sink |
 
 ## Installation
 
