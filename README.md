@@ -16,6 +16,7 @@ All headers are inline, allocation-light, and validated on real hardware (devkit
 | `memory`     | ✅ Stable   | `read<T>`, `write<T>`, `copy`, `fill`, `nop`, `nop_range`, `write_branch`, `write_branch_link` (PPC patch helpers) |
 | `call`       | ✅ Stable   | `invoke<R>(addr)` ... `invoke<R, P1..P10>(addr, args...)` — typed calls into absolute addresses |
 | `kernel`     | ✅ Stable   | `module_handle("xam.xex")`, `resolve(module, ordinal)` — XAM / xboxkrnl / xbdm export lookup by ordinal |
+| `file`       | ✅ Stable   | RAII `file` (open/read/write/seek/tell/size/flush), modes (read_existing, write_truncate, write_append, read_write, create_new), `read_all` / `write_all` helpers |
 
 ## Installation
 
