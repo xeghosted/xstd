@@ -12,6 +12,7 @@ All headers are inline, allocation-light, and validated on real hardware (devkit
 |-------------|------------|-------------------------------------------------------------------------------------------------------|
 | `threading`  | ✅ Stable   | atomic, mutex, lock_guard, spinlock, once, condition_variable, shared_mutex, semaphore, future, promise, thread (auto-join), async, packaged_task, latch, barrier, stop_token |
 | `filesystem` | ✅ Stable   | `path` + exists, is_directory/regular_file/symlink, file_size, create_directory/directories, remove, remove_all, rename, copy_file, copy, move_file, move_folder, directory_iterate, recursive_directory_iterate |
+| `chrono`     | ✅ Stable   | `ratio`, `duration` (ns/us/ms/s/min/h), `duration_cast`, `time_point`, `steady_clock`/`system_clock`/`high_resolution_clock`, `sleep_for`, `stopwatch`, `game_timer` (FPS limiter) |
 
 ## Installation
 
