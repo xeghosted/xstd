@@ -113,4 +113,4 @@ If you read the headers you'll notice some patterns that differ from modern C++:
 
 ## License
 
-No license file yet — to be added. Treat as "all rights reserved" until then; open an issue if you want a specific license added (MIT / Apache-2.0 / 0BSD are all fine with me).
+[0BSD](LICENSE) — do whatever you want with it, no attribution required.
