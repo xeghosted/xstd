@@ -52,6 +52,15 @@
     #include <xtl.h>
 #endif
 
+// The Xbox 360 XDK <xtl.h> does not pull in the desktop fileapi.h constants.
+// Provide the few we touch so callers don't have to define them upstream.
+#ifndef INVALID_FILE_ATTRIBUTES
+    #define INVALID_FILE_ATTRIBUTES ((DWORD)-1)
+#endif
+#ifndef FILE_ATTRIBUTE_REPARSE_POINT
+    #define FILE_ATTRIBUTE_REPARSE_POINT 0x00000400
+#endif
+
 namespace xstd {
 namespace filesystem {
 
