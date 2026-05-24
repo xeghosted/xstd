@@ -19,6 +19,18 @@ All headers are inline, allocation-light, and validated on real hardware (devkit
 | `file`       | ✅ Stable   | RAII `file` (open/read/write/seek/tell/size/flush), modes (read_existing, write_truncate, write_append, read_write, create_new), `read_all` / `write_all` helpers |
 | `format`     | ✅ Stable   | Safe printf-style formatting — `print(buf, size, fmt, ...)`, `tmp(...)`, `buffer<N>` stack-allocated wrapper with `.print`/`.append`/`.c_str` |
 | `log`        | ✅ Stable   | Leveled logger (`trace/debug/info/warn/error`) with timestamps, prints to UART via printf and optional file sink |
+| `optional`   | ✅ Stable   | `optional<T>` — empty-or-value, `emplace0/1/2/3`, `value_or`, safe-bool, bitwise move via `xstd::move(opt)` |
+| `result`     | ✅ Stable   | `result<T, E>` — discriminated union, `ok(v)` / `err(e)` factories, `is_ok`/`is_err`, safe-bool, `value_or` |
+| `span`       | ✅ Stable   | `span<T>` — non-owning ptr+size view, `first`/`last`/`subspan`, raw-pointer iterators, bounds-asserted indexing |
+| `assert`     | ✅ Stable   | `XSTD_ASSERT(expr)` — single customization point used by containers / vocab types |
+| `string_view`| ✅ Stable   | Non-owning `string_view` — `find`/`rfind`, `starts_with`/`ends_with`/`contains`, `substr`, `compare`, full comparison ops |
+| `string`     | ✅ Stable   | Owning `string` (malloc/free, no SSO, empty = no alloc), `append`/`push_back`/`reserve`/`resize`, `substr`, implicit `string_view` conversion, `to_string(int/uint/i64/u64)`, bitwise move proxy |
+| `fixed_vector`| ✅ Stable  | `fixed_vector<T,N>` — stack-only, asserts on overflow, `emplace_back0..3`, `erase` |
+| `vector`     | ✅ Stable   | `vector<T>` — heap-backed, doubling growth, `reserve`/`resize`/`shrink_to_fit`/`erase`/`emplace_back0..3`, bitwise move proxy |
+| `small_vector`| ✅ Stable  | `small_vector<T,N>` — inline up to N then spills to heap, `is_heap()`, `shrink_to_fit` returns to inline, bitwise move proxy |
+| `ring_buffer`| ✅ Stable   | `ring_buffer<T,N>` — bounded FIFO, single-threaded, `push_back`/`pop_front`/`front`/`back`/`emplace_back0..3` |
+| `hash_map`   | ✅ Stable   | `hash_map<K,V,Hash>` — open-addressing + linear probing, default `hash<>` for int/uint/i64/u64/T*/string/string_view, `insert`/`insert_or_assign`/`find`/`erase`/`operator[]`/iterators, bitwise move proxy |
+| `hook`       | ✅ Stable   | RAII PPC near-jump detour — `install`/`uninstall`, 8-byte trampoline, `original_as<Fn>()` typed call into the patched-over original, full I-cache flush (dcbst/sync/icbi/isync), bitwise move proxy |
 
 ## Installation
 
